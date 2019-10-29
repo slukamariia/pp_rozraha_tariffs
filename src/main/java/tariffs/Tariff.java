@@ -10,6 +10,15 @@ public class Tariff {
 
     public Tariff(){}
 
+    public Tariff(String name, Integer price, Integer internet, Integer call, Integer sms, Integer callAnother) {
+        this.name = name;
+        this.price = price;
+        this.internet = internet;
+        this.call = call;
+        this.sms = sms;
+        this.callAnother = callAnother;
+    }
+
     public String getName() {   return name;    }
 
     public Integer getInternet() {   return internet;    }
