@@ -1,5 +1,6 @@
-package main.java.tariffs;
+package main.java.tariffs.metaInf;
 
+import main.java.tariffs.model.Tariff;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,9 +10,10 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("kkkkk");
+
 
     }
+
     public static final String OPERATOR_KYIVSTAR = "KYIVSTAR";
     public static final String OPERATOR_LIFECELL = "LIFECELL";
 

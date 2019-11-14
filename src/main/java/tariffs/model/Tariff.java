@@ -1,4 +1,4 @@
-package main.java.tariffs;
+package main.java.tariffs.model;
 
 public class Tariff {
     protected String name;
