@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mobile>
+    <operator>
+        <name>Kyivstar</name>
+        <amount>1200</amount>
+        <tariffs>
+            <tariff>
+                <name>Plus</name>
+                <price>60</price>
+                <internet>3000</internet>
+                <call>2147483647</call>
+                <sms>2147483647</sms>
+                <callToAnother>30</callToAnother>
+                <roaming>0</roaming>
+                <clients>
+                    <number>+380974554345</number>
+                    <number>+380664657532</number>
+                </clients>
+            </tariff>
+            <tariff>
+                <name>Plus</name>
+                <price>80</price>
+                <internet>2000</internet>
+                <call>2147483647</call>
+                <sms>2147483647</sms>
+                <callToAnother>10</callToAnother>
+                <roaming>100</roaming>
+                <clients>
+                    <number>+32</number>
+                    <number>+435</number>
+                </clients>
+            </tariff>
+        </tariffs>
+    </operator>
+</mobile>
