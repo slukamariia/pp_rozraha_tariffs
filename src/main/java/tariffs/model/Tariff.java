@@ -1,8 +1,11 @@
-package main.java.tariffs.model;
+package tariffs.model;
+
+import nu.xom.Element;
+import tariffs.model.XMLSerializable;
 
 import java.util.List;
 
-public class Tariff {
+public class Tariff implements XMLSerializable {
     private String name;
     private Integer price;
     private Integer internet;
@@ -15,4 +18,31 @@ public class Tariff {
     public Tariff(){}
 
 
+    public Element getXML() {
+        Element tariff = new Element("tariff");
+
+        Element elName = new Element ("name");
+        Element elPrice = new Element ("price");
+        Element elInternet = new Element ("internet");
+        Element elCall = new Element ("call");
+        Element elSms = new Element ("sms");
+        Element elCallToAnother = new Element ("callToAnother");
+        Element elRoaming = new Element ("roaming");
+        Element elClients = new Element ("clients");
+
+        for(Client cl: clients){
+            elClients.appendChild(getXML());
+        }
+
+        tariff.appendChild(elName);
+        tariff.appendChild(elPrice);
+        tariff.appendChild(elInternet);
+        tariff.appendChild(elCall);
+        tariff.appendChild(elSms);
+        tariff.appendChild(elCallToAnother);
+        tariff.appendChild(elRoaming);
+        tariff.appendChild(elClients);
+
+        return tariff;
+    }
 }
