@@ -10,9 +10,21 @@ public class Client implements XMLSerializable {
         this.number = number;
     }
 
+    public Client(Element elNumber) {
+        this.number = elNumber.getValue();
+    }
+
     public Element getXML() {
-        Element number = new Element("number");
-        number.appendChild(number);
-        return number;
+        Element elNumber = new Element("number");
+        elNumber.appendChild(number);
+
+        return elNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "number='" + number + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package main.java.tariffs.command;
+package tariffs.command;
 
 public class EditTariffCommand implements Command{
 
