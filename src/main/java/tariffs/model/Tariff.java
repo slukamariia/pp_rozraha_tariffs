@@ -12,8 +12,6 @@ public class Tariff {
     private Integer roaming;
     private List<Client> clients;
 
-
-
     public Tariff(){}
 
 
