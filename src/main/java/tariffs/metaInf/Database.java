@@ -7,9 +7,7 @@ import tariffs.model.Tariff;
 import java.io.*;
 import java.util.*;
 
-/**
- * System.out.println(); - НЕ ВИКОРИСТОВУВАТИ ТУТ
- */
+
 public class Database {
 
     private List<Operator> operators;
