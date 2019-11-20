@@ -32,10 +32,8 @@ public class Storage {
     }
 
     //todo: get all information
-    public void print() {
-        for(Operator o: operators) {
-            System.out.println(o);
-        }
+    public List getAllOperators() {
+         return operators;
     }
 
     //todo: get tariffs

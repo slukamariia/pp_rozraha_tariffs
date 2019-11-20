@@ -88,16 +88,12 @@ public class Tariff implements XMLSerializable {
 
     @Override
     public String toString() {
-        return "Tariff{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", internet=" + internet +
-                ", call=" + call +
-                ", sms=" + sms +
-                ", callsToAnother=" + callsToAnother +
-                ", roaming=" + roaming +
-                ", clients=" + clients +
-                '}';
+        final StringBuilder sb = new StringBuilder("");
+
+        sb.append(String.format("%s  |  %d  |    %d  |  %d  |  %d  |  %d  |  %d  |",
+                name, price, internet,call,sms,callsToAnother,roaming,clients.size()));
+
+        return sb.toString();
     }
 }
 

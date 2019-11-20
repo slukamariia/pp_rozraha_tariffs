@@ -59,10 +59,17 @@ public class Operator implements XMLSerializable {
 
     @Override
     public String toString() {
-        return "Operator{" +
-                "name='" + name + '\'' +
-                ", amount=" + amount +
-                ", tariffs=" + tariffs +
-                '}';
+        final StringBuilder sb = new StringBuilder("");
+        sb.append(String.format("%s (clients - %d)", name, amount)).append('\n');
+        sb.append("----------------------------------------------------------------------------\n");
+        sb.append("|   name    | price | internet | call | call to another | roaming | clients |\n");
+        sb.append("----------------------------------------------------------------------------\n");
+        int num=1;
+        for(Tariff t: tariffs){
+            sb.append(String.valueOf(num)+ ". " + t.toString());
+            num++;
+        }
+
+        return sb.toString();
     }
 }
