@@ -6,11 +6,11 @@ import tariffs.model.Operator;
 import java.sql.SQLOutput;
 import java.util.List;
 
-public class GetAllInformationCommand implements  Command{
+public class PrintAllOperatorInformationCommand implements  Command{
 
     private Storage storage;
 
-    public GetAllInformationCommand(Storage storage) {
+    public PrintAllOperatorInformationCommand(Storage storage) {
         this.storage = storage;
     }
 
@@ -19,6 +19,7 @@ public class GetAllInformationCommand implements  Command{
         for(Operator o : operators){
             System.out.println(o);
         }
+
 
     }
 

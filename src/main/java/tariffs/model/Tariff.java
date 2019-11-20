@@ -90,7 +90,7 @@ public class Tariff implements XMLSerializable {
     public String toString() {
         final StringBuilder sb = new StringBuilder("");
 
-        sb.append(String.format("%s  |  %d  |    %d  |  %d  |  %d  |  %d  |  %d  |",
+        sb.append(String.format("| %-11s | %-5d | %-8d | %-4d | %-3d | %-16d | %-7d | %-7d |",
                 name, price, internet,call,sms,callsToAnother,roaming,clients.size()));
 
         return sb.toString();

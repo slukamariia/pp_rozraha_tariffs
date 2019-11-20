@@ -62,11 +62,11 @@ public class Operator implements XMLSerializable {
         final StringBuilder sb = new StringBuilder("");
         sb.append(String.format("%s (clients - %d)", name, amount)).append('\n');
         sb.append("----------------------------------------------------------------------------\n");
-        sb.append("|   name    | price | internet | call | call to another | roaming | clients |\n");
+        sb.append("  # |     name    | price | internet | call | sms | calls to another | roaming | clients |").append('\n');
         sb.append("----------------------------------------------------------------------------\n");
         int num=1;
         for(Tariff t: tariffs){
-            sb.append(String.valueOf(num)+ ". " + t.toString());
+            sb.append(String.format("%2d. %s ", num, t.toString())).append('\n');
             num++;
         }
 

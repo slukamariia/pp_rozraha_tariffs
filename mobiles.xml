@@ -8,8 +8,8 @@
                 <name>Plus</name>
                 <price>60</price>
                 <internet>3000</internet>
-                <call>2147483647</call>
-                <sms>2147483647</sms>
+                <call>47</call>
+                <sms>21</sms>
                 <callToAnother>30</callToAnother>
                 <roaming>0</roaming>
                 <clients>

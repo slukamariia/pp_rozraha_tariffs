@@ -32,7 +32,7 @@ public class Storage {
     }
 
     //todo: get all information
-    public List getAllOperators() {
+    public List<Operator> getAllOperators() {
          return operators;
     }
 

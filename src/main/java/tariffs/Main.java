@@ -1,6 +1,8 @@
 package tariffs;
 
-import tariffs.command.GetAllInformationCommand;
+import tariffs.command.MenuCommand;
+import tariffs.command.PrintAllOperatorInformationCommand;
+import tariffs.command.PrintAllOperatorInformationCommand;
 import tariffs.metaInf.Storage;
 import tariffs.model.Client;
 import tariffs.model.Tariff;
@@ -13,7 +15,15 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        Storage storage = new Storage("mobiles.xml");
+        PrintAllOperatorInformationCommand getAllInformationCommand = new PrintAllOperatorInformationCommand(storage);
+        getAllInformationCommand.execute();
 
+        MenuCommand menu = new MenuCommand(storage);
+        menu.execute();
+    }
+
+}
 //        List<Tariff> tariffs = new LinkedList<Tariff>();
 //
 //        //-------------------------------------------------------
@@ -57,13 +67,6 @@ public class Main {
 //        database.save();
 //        database.print();
 //
-
-        Storage storage = new Storage("mobiles.xml");
-        GetAllInformationCommand getAllInformationCommand = new GetAllInformationCommand(storage);
-        getAllInformationCommand.execute();
-    }
-
-}
 
 
 
