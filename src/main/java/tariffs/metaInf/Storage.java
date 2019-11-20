@@ -8,12 +8,12 @@ import java.io.*;
 import java.util.*;
 
 
-public class Database {
+public class Storage {
 
     private List<Operator> operators;
     private String fileName;
 
-    public Database(String fileName) {
+    public Storage(String fileName) {
         this.fileName = fileName;
         operators = new LinkedList<Operator>();
 

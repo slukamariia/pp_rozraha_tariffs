@@ -1,5 +1,6 @@
-package tariffs.metaInf;
+package tariffs;
 
+import tariffs.metaInf.Storage;
 import tariffs.model.Client;
 import tariffs.model.Tariff;
 import tariffs.model.Operator;
@@ -50,7 +51,7 @@ public class Main {
 
         Operator kyiv = new Operator("Kyivstar", 1200, tariffs);
 
-        Database database = new Database("mobiles2.xml");
+        Storage database = new Storage("mobiles2.xml");
         database.addOperator(kyiv);
         database.save();
         database.print();
