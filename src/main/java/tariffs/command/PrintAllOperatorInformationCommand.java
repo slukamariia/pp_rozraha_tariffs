@@ -19,8 +19,6 @@ public class PrintAllOperatorInformationCommand implements  Command{
         for(Operator o : operators){
             System.out.println(o);
         }
-
-
     }
 
 }
