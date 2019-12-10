@@ -31,6 +31,11 @@ public class Storage {
         operators.add(operator);
     }
 
+    //remove operator
+    public void removeOperator(int index) {
+        this.operators.remove(index);
+    }
+
     //todo: get all information
     public List<Operator> getAllOperators() {
          return operators;

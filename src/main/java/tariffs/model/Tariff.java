@@ -7,7 +7,7 @@ import tariffs.model.XMLSerializable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Tariff implements XMLSerializable {
+public class Tariff implements Comparable<Tariff>, XMLSerializable {
 
     private String name;
     private Integer price;
@@ -17,6 +17,7 @@ public class Tariff implements XMLSerializable {
     private Integer callsToAnother;
     private Integer roaming;
     private List<Client> clients;
+
 
     public Tariff(String name, Integer price, Integer internet, Integer call, Integer sms, Integer callsToAnother, Integer roaming, List<Client> clients) {
         this.name = name;
@@ -47,6 +48,70 @@ public class Tariff implements XMLSerializable {
             this.clients.add(new Client(elsClients.get(i)));
         }
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getInternet() {
+        return internet;
+    }
+
+    public void setInternet(Integer internet) {
+        this.internet = internet;
+    }
+
+    public Integer getCall() {
+        return call;
+    }
+
+    public void setCall(Integer call) {
+        this.call = call;
+    }
+
+    public Integer getSms() {
+        return sms;
+    }
+
+    public void setSms(Integer sms) {
+        this.sms = sms;
+    }
+
+    public Integer getCallsToAnother() {
+        return callsToAnother;
+    }
+
+    public void setCallsToAnother(Integer callsToAnother) {
+        this.callsToAnother = callsToAnother;
+    }
+
+    public Integer getRoaming() {
+        return roaming;
+    }
+
+    public void setRoaming(Integer roaming) {
+        this.roaming = roaming;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
     }
 
     public Element getXML() {
@@ -95,6 +160,12 @@ public class Tariff implements XMLSerializable {
 
         return sb.toString();
     }
+
+    public int compareTo(Tariff o) {
+        return Integer.compare(this.getPrice(), o.getPrice());
+    }
+
+
 }
 
 

@@ -35,6 +35,31 @@ public class Operator implements XMLSerializable {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public List<Tariff> getTariffs() {
+        tariffs.sort(Tariff::compareTo);
+        return tariffs;
+    }
+
+    public void setTariffs(List<Tariff> tariffs) {
+        this.tariffs = tariffs;
+    }
+
     public Element getXML() {
 
         Element operator = new Element("operator");

@@ -1,72 +1,46 @@
 package tariffs;
 
-import tariffs.command.MenuCommand;
-import tariffs.command.PrintAllOperatorInformationCommand;
-import tariffs.command.PrintAllOperatorInformationCommand;
+import tariffs.command.Command;
+import tariffs.command.operators.ActionWithOperatorsCommand;
+import tariffs.command.operators.DeleteOperatorCommand;
+import tariffs.command.operators.ExitCommand;
+import tariffs.command.operators.PrintAllOperatorsInformationCommand;
+import tariffs.metaInf.Menu;
 import tariffs.metaInf.Storage;
-import tariffs.model.Client;
-import tariffs.model.Tariff;
-import tariffs.model.Operator;
 
-import java.util.*;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Main {
 
-    public static void main(String[] args) {
-        Storage storage = new Storage("mobiles.xml");
-        PrintAllOperatorInformationCommand getAllInformationCommand = new PrintAllOperatorInformationCommand(storage);
-        getAllInformationCommand.execute();
+    private static final String FILE_STORAGE_NAME = "data.xml";
 
-        MenuCommand menu = new MenuCommand(storage);
-        menu.execute();
+    private static void init(Map<String, Command> commandMap, Storage storage) {
+        commandMap.put("/PRINT", new PrintAllOperatorsInformationCommand(storage));
+        commandMap.put("/DELETE_OPERATOR", new DeleteOperatorCommand(storage));
+        commandMap.put("/ACTION_WITH_OPERATORS", new ActionWithOperatorsCommand(storage));
+        commandMap.put("/EXIT", new ExitCommand());
+    }
+
+    public static void main(String[] args) {
+
+        Storage storage = new Storage(FILE_STORAGE_NAME);
+        Map<String, Command> commnandMap = new HashMap<String, Command>();
+        init(commnandMap, storage);
+
+        while (true) {
+            Menu.Operators.printMenu();
+            String action = Menu.readCommand(commnandMap.keySet());
+
+            Command command = commnandMap.get(action);
+            command.execute();
+        }
+
     }
 
 }
-//        List<Tariff> tariffs = new LinkedList<Tariff>();
-//
-//        //-------------------------------------------------------
-//        List<Client> clients1 = new LinkedList<Client>();
-//
-//        clients1.add( new Client("+380974554345") );
-//        clients1.add( new Client("+380664657532") );
-//
-//
-//        Tariff tariff1 = new Tariff("Plus",
-//                60,
-//                3000,
-//                Integer.MAX_VALUE,
-//                Integer.MAX_VALUE,
-//                30,
-//                0,
-//                clients1);
-//        tariffs.add(tariff1);
-//
-//        //-------------------------------------------------------
-//        List<Client> clients2 = new LinkedList<Client>();
-//
-//        clients2.add( new Client("+32") );
-//        clients2.add( new Client("+435") );
-//
-//        Tariff tariff2 = new Tariff("Plus",
-//                80,
-//                2000,
-//                Integer.MAX_VALUE,
-//                Integer.MAX_VALUE,
-//                10,
-//                100,
-//                clients2);
-//        tariffs.add(tariff2);
-//
-//
-//        Operator kyiv = new Operator("Kyivstar", 1200, tariffs);
-//
-//        Storage database = new Storage("mobiles2.xml");
-//        database.addOperator(kyiv);
-//        database.save();
-//        database.print();
-//
+
 
 
 

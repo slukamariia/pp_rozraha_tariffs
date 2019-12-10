@@ -4,6 +4,10 @@ import nu.xom.Element;
 
 public class Client implements XMLSerializable {
 
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     private String number;
 
     public Client(String number) {
