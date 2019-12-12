@@ -1,10 +1,10 @@
 package tariffs.command.operators;
 
 public enum ActionMenu {
-    ADD("add - add tariff to operator"),
-    DEL("del - delete an tariff"),
-    FIND("find - show all tariffs in range"),
-    BACK("back - go to the previous menu");
+    ADD("ADD - add tariff to operator"),
+    DEL("DEL - delete an tariff"),
+    FIND("FIND - show all tariffs in range"),
+    BACK("BACK - go to the previous menu");
 
     private String description;
 
