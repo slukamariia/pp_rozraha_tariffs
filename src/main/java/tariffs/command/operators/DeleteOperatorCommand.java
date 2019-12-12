@@ -7,6 +7,9 @@ import tariffs.model.Operator;
 
 import java.util.List;
 
+import static tariffs.metaInf.Operators.chooseOperatorByIndex;
+import static tariffs.metaInf.Operators.printSuccess;
+
 public class DeleteOperatorCommand implements Command {
 
     private Storage storage;
@@ -20,7 +23,7 @@ public class DeleteOperatorCommand implements Command {
         List<Operator> operators = storage.getAllOperators();
         Integer index;
         try {
-            index = Menu.Operators.chooseOperatorByIndex(operators);
+            index = chooseOperatorByIndex(operators);
         } catch (NullPointerException ignored) {
             System.out.println("You have to create more operators");
             return;
@@ -28,7 +31,7 @@ public class DeleteOperatorCommand implements Command {
 
         storage.removeOperator(index);
 
-        Menu.Operators.printSuccess();
+        printSuccess();
 
     }
 
