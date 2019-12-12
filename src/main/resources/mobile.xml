@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<operators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation='mobile.xsd'>
+  <operator name="Kyivstar" amount="1200">
+    <tariffs>
+      <tariff name="Plus" price="60" internet="300" call="47" sms="21" callToAnother="30" roaming="0">
+        <clients>
+          <client number="+380974554345"/>
+        </clients>
+      </tariff>
+    </tariffs>
+  </operator>
+
+</operators>
