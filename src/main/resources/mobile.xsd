@@ -1,0 +1,54 @@
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="operators">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="operator"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="operator">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tariffs"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="required"/>
+            <xs:attribute type="xs:int" name="amount" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="tariffs">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="tariff"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="tariff">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="clients"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="required"/>
+            <xs:attribute type="xs:int" name="price" use="required"/>
+            <xs:attribute type="xs:int" name="internet" use="required"/>
+            <xs:attribute type="xs:int" name="call" use="required"/>
+            <xs:attribute type="xs:int" name="sms" use="required"/>
+            <xs:attribute type="xs:int" name="callToAnother" use="required"/>
+            <xs:attribute type="xs:int" name="roaming" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="clients">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="client"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="client">
+        <xs:complexType>
+            <xs:attribute name="number" type="xs:long" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
