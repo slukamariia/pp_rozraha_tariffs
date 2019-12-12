@@ -1,0 +1,45 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t]: %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/application.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t]: %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="Email" class="org.apache.log4j.net.SMTPAppender">
+        <param name="BufferSize" value="1" /> <!-- default is 512, changed for test cases to work -->
+        <!-- GMail will not work without this, log4j 1.2.16 is required this why earlier versions required hack-->
+        <param name="SMTPProtocol" value="smtps" />
+        <param name="SMTPHost" value="smtp.gmail.com" />
+        <param name="SMTPPort" value="465" />
+        <param name="SMTPUsername" value="reciver@gmail.com" /> <!-- example@gmail.com -->
+        <param name="SMTPPassword" value="mypassword" /> <!-- passowrd -->
+        <param name="To" value="email@gmail.com" />
+        <param name="Subject" value="Zytoon.me Error Log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t]: %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="EMAIL_ASYNC" class="org.apache.log4j.AsyncAppender">
+        <param name="BufferSize" value="1"/>
+        <appender-ref ref="Email"/>
+    </appender>
+
+    <root>
+        <priority value ="debug"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="fileAppender"/>
+        <!-- appender-ref ref="EMAIL_ASYNC" >-->
+    </root>
+
+</log4j:configuration>
