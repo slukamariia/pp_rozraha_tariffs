@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StorageXml {
+public class StorageXml implements Storage {
     private final static String PACKAGE_GENERATED_SOURCE = "tariffs.config.model";
     private final static String XSD_NAME = "/mobile.xsd";
     private final static String XML_NAME = "/mobile.xml";
@@ -23,11 +23,6 @@ public class StorageXml {
 
     public StorageXml() throws Exception {
         initData();
-    }
-
-    public static void main(String[] args) throws Exception {
-        StorageXml storageXml = new StorageXml();
-        storageXml.operators.forEach(System.out::print);
     }
 
     private void initData() throws Exception {
@@ -39,5 +34,10 @@ public class StorageXml {
         unmarshaller.setSchema(schema);
         Operators unmarshal = (Operators) unmarshaller.unmarshal(getClass().getResource(XML_NAME));
         operators.addAll(unmarshal.getOperator());
+    }
+
+    @Override
+    public List<Operator> getOperators() {
+        return operators;
     }
 }
