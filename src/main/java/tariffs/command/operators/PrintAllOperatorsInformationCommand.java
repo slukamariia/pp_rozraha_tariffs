@@ -3,6 +3,9 @@ package tariffs.command.operators;
 import tariffs.command.Command;
 import tariffs.metaInf.Menu;
 import tariffs.metaInf.Storage;
+import tariffs.model.Operator;
+
+import java.util.List;
 
 public class PrintAllOperatorsInformationCommand implements Command {
 
@@ -12,8 +15,16 @@ public class PrintAllOperatorsInformationCommand implements Command {
         this.storage = storage;
     }
 
+    public static void printOperatorsInformation(List<Operator> operators) {
+        if (operators.isEmpty()) {
+            System.out.println("List of operators is empty.");
+            return;
+        }
+        operators.forEach(System.out::println);
+    }
+
     public void execute() {
-        Menu.Operators.printOperatorsInformation(storage.getAllOperators());
+        printOperatorsInformation(storage.getAllOperators());
     }
 
 }
