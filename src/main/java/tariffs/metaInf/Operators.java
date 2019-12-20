@@ -9,9 +9,6 @@ public class Operators {
 
     private static final Scanner s = new Scanner(System.in);
 
-
-
-
     public static void printListOfOperators(List<Operator> operators) {
         System.out.println("\tList of operators");
         for (int i = 0, n = operators.size(); i < n; i++) {
@@ -19,8 +16,6 @@ public class Operators {
             System.out.println(i + ". " + name);
         }
     }
-
-
 
     public static Integer chooseOperatorByIndex(List<Operator> operators) {
         if (operators.isEmpty()) {

@@ -13,7 +13,8 @@ import static tariffs.metaInf.Menu.printMainMenu;
 import static tariffs.metaInf.Menu.readCommand;
 
 import org.apache.log4j.Logger;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class Main {
     private static final  Logger logger = Logger.getLogger(Main.class);

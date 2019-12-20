@@ -18,6 +18,9 @@ public class Operator implements XMLSerializable {
         this.name = name;
         this.tariffs = new LinkedList<>();
     }
+    public Operator(){
+
+    }
 
     public Operator(Element elOperator) {
 

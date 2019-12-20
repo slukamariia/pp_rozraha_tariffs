@@ -25,8 +25,11 @@ public class Storage {
             e.printStackTrace();
         }
     }
+    public Storage(){
+        operators = new LinkedList<>();
+    }
 
-    //todo: add operator
+    //add operator
     public void addOperator(Operator operator) {
         operators.add(operator);
     }
@@ -36,24 +39,42 @@ public class Storage {
         this.operators.remove(index);
     }
 
-    //todo: get all information
+    //get all information
     public List<Operator> getAllOperators() {
-         return operators;
+        return operators;
     }
 
-    //todo: get tariffs
+    //get tariffs
+    public List<Tariff> getTariff(int index) {
+        return operators.get(index).getTariffs();
+    }
 
-    //todo: get tariffs with external information
+    //get amount of clients
+    public Integer getAmountOfClients() {
+        Integer sum = 0;
+        for (Operator o : operators) {
+            sum += o.getAmount();
+        }
+        return sum;
+    }
 
-    //todo: get amount of clients
+    //get tariffs of range
+    public List<Tariff> getTariffInRange(int index, int st, int end) {
+        return operators.get(index).getInRange(st, end);
+    }
 
-    //todo: get tariffs of range
+    //add tariff to an operator (at the end: SAVE)
+    public boolean addTariff(int index, Tariff tariff) {
+        operators.get(index).getTariffs().add(tariff);
+        save();
+        return true;
+    }
 
-    //todo: add tariff to an operator (at the end: SAVE)
-
-    //todo: edit tariff to an operator (at the end: SAVE)
-
-    //todo: delete tariff to an operator (at the end: SAVE)
+    //delete tariff to an operator (at the end: SAVE)
+    public boolean removeTariff(int operatorIndex, int tariffIndex) {
+        this.operators.get(operatorIndex).getTariffs().remove(tariffIndex);
+        return true;
+    }
 
     private void readData() throws ParsingException, IOException {
 

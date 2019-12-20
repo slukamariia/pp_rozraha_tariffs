@@ -1,6 +1,6 @@
 package tariffs.xml;
 
-import tariffs.config.model.Operator;
+import tariffs.model.Operator;
 
 import java.util.List;
 

@@ -26,7 +26,6 @@ public class Tariff implements Comparable<Tariff>, XMLSerializable {
     private Integer roaming;
     private List<Client> clients;
 
-
     public Tariff(String name, Integer price, Integer internet, Integer call, Integer sms, Integer callsToAnother, Integer roaming, List<Client> clients) {
         this.name = name;
         this.price = price;

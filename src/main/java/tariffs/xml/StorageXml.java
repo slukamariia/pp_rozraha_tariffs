@@ -1,13 +1,9 @@
 package tariffs.xml;
 
-import tariffs.config.model.Operator;
-import tariffs.config.model.Operators;
-import tariffs.metaInf.Menu;
+import tariffs.metaInf.Operators;
+import tariffs.model.Operator;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
@@ -21,7 +17,7 @@ public class StorageXml implements Storage {
     private final static String XML_NAME = "/mobile.xml";
     private List<Operator> operators = new ArrayList<>();
 
-    public StorageXml() throws Exception {
+    /*public StorageXml() throws Exception {
         initData();
     }
 
@@ -34,7 +30,7 @@ public class StorageXml implements Storage {
         unmarshaller.setSchema(schema);
         Operators unmarshal = (Operators) unmarshaller.unmarshal(getClass().getResource(XML_NAME));
         operators.addAll(unmarshal.getOperator());
-    }
+    }*/
 
     @Override
     public List<Operator> getOperators() {

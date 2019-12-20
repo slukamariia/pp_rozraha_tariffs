@@ -5,12 +5,10 @@ import nu.xom.Element;
 public class Client implements XMLSerializable {
 
     public static final String NUMBER = "number";
-
+    private String number;
     public void setNumber(String number) {
         this.number = number;
     }
-
-    private String number;
 
     public Client(String number) {
         this.number = number;

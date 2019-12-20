@@ -1,11 +1,11 @@
 package tariffs.metaInf;
 
 public enum MenuItems {
-    PRINT("print - print all operators information"),
-    ADD("add - addition operator"),
-    DEL("del - delete operator"),
-    ACT("act - action with an operator"),
-    EXIT("exit - exit program");
+    PRINT("PRINT - print all operators information"),
+    ADD("ADD - addition operator"),
+    DEL("DEL - delete operator"),
+    ACT("ACT - action with an operator"),
+    EXIT("EXIT - exit program");
 
     private String description;
 
